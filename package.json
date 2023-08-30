@@ -1,0 +1,29 @@
+{
+  "name": "doc_template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "@doc-tools/docs": "^3.23.0",
+    "@web/dev-server": "^0.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "npm run build:docs && node scripts/serve.js",
+    "build:docs": "yfm --input docs --output docs-html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moki/documentation-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moki/documentation-template/issues"
+  },
+  "homepage": "https://github.com/moki/documentation-template#readme"
+}
