@@ -1,0 +1,11 @@
+title: documentation template
+href: index.yaml
+items:
+  - name: sub-section
+    include:
+      path: sub-section/toc.yaml
+      mode: link
+  - name: about
+    href: about.md
+  - name: page
+    href: page.md

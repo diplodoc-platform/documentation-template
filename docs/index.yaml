@@ -1,0 +1,8 @@
+title: documentation template
+links:
+  - title: sub-section
+    href: sub-section/
+  - title: about
+    href: about.md
+  - title: page
+    href: page.md
