@@ -5,8 +5,10 @@ const {exec} = require('child_process');
 const options = {
   config: {
     rootDir: process.cwd(),
+    open: 'index.html',
     basePath: path.join(process.cwd(), 'docs-html'),
     open: path.join('docs-html', 'index.html'),
+    port: 8000,
     watch: true,
     plugins: [{
       name: '@diplodoc/docs rebuild',

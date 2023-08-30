@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configuration": [
+    {
+      "name": "Run Diplodoc Playground",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "start"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    }
+  ]
+}
