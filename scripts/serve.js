@@ -12,6 +12,8 @@ const utils = require('parse5-utils');
 const watcher = new chokidar.FSWatcher({ignored: '*.swp'});
 const glob = require('glob');
 
+const open = require('open');
+
 class Server {
   // read configuration
   constructor(parameters = {}) {
@@ -142,6 +144,8 @@ events.addEventListener("${this.configs.sseEventName}", function(e) {
   // start up server
   listen() {
     this.app.listen(this.configs.port);
+
+    open(`http://0.0.0.0:${this.configs.port}`);
   }
 }
 
