@@ -12,6 +12,7 @@ const utils = require('parse5-utils');
 const watcher = new chokidar.FSWatcher({ignored: '*.swp'});
 const glob = require('glob');
 
+const {debounce} = require('lodash');
 const open = require('open');
 
 class Server {
@@ -83,15 +84,20 @@ events.addEventListener("${this.configs.sseEventName}", function(e) {
 
     // when sources change:
     // - rebuild documentation
+    // - inject sse into documentation
     // - notify client with reload event
-    // this.watcher.on('all', (e) => {
-    watcher.on('all', (event, path) => {
+    watcher.on('all', debounce((event, path) => {
       console.info(`event: ${event}, path: ${path}`);
       
-      this.buildDocumentation();
-      this.injectSSE();
-      this.sendSSEReloadResponse(res);
-    });
+      try {
+        this.buildDocumentation.call(this);
+      } catch (err) {
+        console.error('failed building documentation:', err);
+      }
+
+      this.injectSSE.call(this);
+      this.sendSSEReloadResponse.call(this, res);
+    }, 500));
   }
 
   // build documentation
