@@ -15,6 +15,11 @@
         "docs/index.yaml",
         "docs/toc.yaml"
       ]
+    },
+    "vscode": {
+      "extensions": [
+        "vsls-contrib.codetour"
+      ]
     }
   },
   "portsAttributes": {

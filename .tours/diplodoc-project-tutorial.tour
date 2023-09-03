@@ -1,0 +1,61 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Diplodoc Project Tutorial",
+  "steps": [
+    {
+      "title": "Introduction",
+      "description" : "This tutorial will take you through basic diplodoc documentation project"
+    },
+    {
+      "title": "Playground",
+      "description": "You are right now in the diplodoc playground\n\nPlayground starts development server that rebuilds documentation on file changes\nand serves it\nGiving you ability to see live changes inside the Simple Browser window\n\nyou can start development server with `npm start` command(it is done automatically inside github codespaces)\ndocumentation served on `0.0.0.0:8000`"
+    },
+    {
+      "title": "Project structure",
+      "description": "Let's go through documentation project structure"
+    },
+    {
+      "title": "Documentation sources",
+      "description": "Documentation sources are located inside the `docs/` folder",
+      "directory": "docs"
+    },
+    {
+      "title": "Documentation build result",
+      "description": "Documentation build result can be found in the `docs-html` folder as the `static html`",
+      "directory": "docs-html"
+    },
+    {
+      "title": "Table Of Contents | toc.yaml",
+      "description": "TOC - Table Of Contents is written in the yaml format\n\nIt helps you describe content\nLinks to files listed in the `toc.yaml` will appear in the aside menu in the html\n\n[Read more about TOC](https://ydocs.tech/en/project/toc)",
+      "file": "docs/toc.yaml"
+    },
+    {
+      "title": "Leading Page | index.yaml",
+      "description": "Leading page is written in the yaml format\n\nIt helps you generate index leading page with links to your content\nFiles linked in the `index.yaml` will appear on the leading page as links\n\n[Read more about Leading Page](https://ydocs.tech/en/project/leading-page)",
+      "file": "docs/index.yaml"
+    },
+    {
+      "title": "Adding new file",
+      "description": "Let's create new markdown content file\n\nCreate new file named `new.md` inside the `docs` folder",
+      "directory": "docs"
+    },
+    {
+      "title": "Add new item to TOC",
+      "description": "Let's add our new file to the `toc.yaml`\n\nAdd two lines to the `toc.yaml`\nfirst: `- name: new content`\nsecond: `href: new.md`\nindent them to align with previous items(indentation is important inside the YAML files)\n\n`name` will describe how item will be named in the aside menu\n`href` specifies location of the file",
+      "file": "docs/toc.yaml",
+      "line": 12
+    },
+    {
+      "title": "Add new item to Leading Page",
+      "description": "Let's add our new file to the `index.yaml` leading page as well\n\nAdd two lines to the `index.yaml`\nfirst: `- title: new content`\nsecond: `href:new.md`\nindent them to align with previous items(indentation is important inside the YAML files)\n\n`title` will describe text of the link on the leading page\n`href` specifies location of the file to link to",
+      "file": "docs/index.yaml",
+      "line": 9
+    },
+    {
+      "title": "Check out the results",
+      "description": "Now you should be able to see changes reflected inside the Simple Browser window\n\nAlso you could find your newly generated documentation including `new.html` file inside the `docs-html` folder",
+      "directory": "docs-html"
+    }
+  ],
+  "isPrimary": true
+}
