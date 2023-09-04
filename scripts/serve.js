@@ -19,6 +19,8 @@ class Server {
   // read configuration
   constructor(parameters = {}) {
     const {
+      autoOpen = false,
+
       watchPattern = 'docs/**/*',
 
       port = 8000,
@@ -33,6 +35,8 @@ class Server {
     } = parameters;
 
     this.configs = {
+      autoOpen,
+
       watchPattern,
 
       port,
@@ -151,7 +155,11 @@ events.addEventListener("${this.configs.sseEventName}", function(e) {
   listen() {
     this.app.listen(this.configs.port);
 
-    open(`http://0.0.0.0:${this.configs.port}`);
+    console.info(`serving on: http://0.0.0.0:${this.configs.port}`);
+
+    if (this.configs.autoOpen) {
+        open(`http://0.0.0.0:${this.configs.port}`);
+    }
   }
 }
 
