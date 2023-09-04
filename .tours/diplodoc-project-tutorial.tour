@@ -53,7 +53,7 @@
     },
     {
       "title": "Check out the results",
-      "description": "Now you should be able to see changes reflected inside the Simple Browser window\n\nAlso you could find your newly generated documentation including `new.html` file inside the `docs-html` folder",
+      "description": "Now refresh page inside the Simple Browser to able to see changes\n\n**Note: outside of the codetour changes will be hot reloaded(you wouldn't need to refresh your browser to see changes)\n\nGo ahead close the Code Tour and try adding new files to your documentation or edit existing ones!",
       "directory": "docs-html"
     }
   ],
