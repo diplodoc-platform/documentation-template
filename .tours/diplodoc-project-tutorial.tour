@@ -36,7 +36,7 @@
     },
     {
       "title": "Adding new file",
-      "description": "Let's create new markdown content file\n\nCreate new file named `new.md` inside the `docs` folder",
+      "description": "Let's create new markdown content file\n\nCreate new file named `new.md` inside the `docs` folder\n\nAfter creating it, editor will open `new.md` file in the new tab.\nPut following content inside of it and switch back to the CodeTour tab.\n\n```\n# new title\n\nnew content\n```",
       "directory": "docs"
     },
     {
