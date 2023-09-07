@@ -1,10 +1,38 @@
 {
-  "name": "doc_template",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
+  "name": "@diplodoc/documentation-template",
+  "version": "0.0.0",
+  "description": "template for your diplodoc documentation with hot reload development server",
+  "homepage": "https://github.com/diplodoc-platform/documentation-template",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:diplodoc-platform/documentation-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/diplodoc-platform/documentation-template/issues",
+    "email": "morozov.kirill.moki@gmail.com"
+  },
+  "author": {
+    "name": "moki",
+    "email": "morozov.kirill.moki@gmail.com",
+    "url": "github.com/moki"
+  },
+  "keywords": [
+    "diplodoc",
+    "markdown-it",
+    "markdown",
+    "playground",
+    "sandbox",
+    "documentation",
+    "development",
+    "hot-reload",
+    "codespaces",
+    "template"
+  ],
+  "license": "MIT",
+  "main": "scripts/serve.js",
+  "scripts": {
+    "start": "npm run build:docs && node scripts/serve.js",
+    "build:docs": "yfm --input docs --output docs-html"
   },
   "dependencies": {
     "@doc-tools/docs": "^3.23.0",
@@ -17,20 +45,5 @@
     "parse5-utils": "^2.0.0",
     "serve-static": "^1.15.0"
   },
-  "devDependencies": {},
-  "scripts": {
-    "start": "npm run build:docs && node scripts/serve.js",
-    "build:docs": "yfm --input docs --output docs-html",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/moki/documentation-template.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/moki/documentation-template/issues"
-  },
-  "homepage": "https://github.com/moki/documentation-template#readme"
+  "devDependencies": {}
 }
