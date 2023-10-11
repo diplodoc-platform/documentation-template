@@ -15,6 +15,8 @@ const glob = require('glob');
 const {debounce} = require('lodash');
 const open = require('open');
 
+const {scripts} = require('../package.json');
+
 class Server {
   // read configuration
   constructor(parameters = {}) {
@@ -49,6 +51,11 @@ class Server {
       sseEventName,
       sseEventMessage,
     };
+
+    this.configs.buildCMD = scripts['build:docs'];
+    if (!this.configs.buildCMD?.length) {
+        throw new Error('package.json missing build:docs script');
+    }
 
     this.configs.sseScript = `
 const events = new EventSource("${this.configs.ssePath}");
@@ -108,7 +115,7 @@ events.addEventListener("${this.configs.sseEventName}", function(e) {
   buildDocumentation() {
     console.info('building documentation');
 
-    execSync('npm run build:docs');
+    execSync(this.configs.buildCMD);
   }
 
   injectSSE() {
