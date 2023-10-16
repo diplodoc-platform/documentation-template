@@ -1,0 +1,23 @@
+name: Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Release
+        uses: diplodoc-platform/docs-release-action@v1
+        with:
+          revision: "${{ github.sha }}"
+          project-name: ${{ secrets.DIPLODOC_PROJECT_NAME }}
+          src-root: "./"
+          storage-bucket: ${{ secrets.DIPLODOC_STORAGE_BUCKET }}
+          storage-endpoint: ${{ vars.DIPLODOC_STORAGE_ENDPOINT }}
+          storage-access-key-id: ${{ secrets.DIPLODOC_ACCESS_KEY_ID }}
+          storage-secret-access-key: ${{ secrets.DIPLODOC_SECRET_ACCESS_KEY }}
+          storage-region: ${{ vars.DIPLODOC_STORAGE_REGION }}
+          shared-storage-bucket: "true"
