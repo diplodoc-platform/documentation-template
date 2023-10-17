@@ -7,6 +7,11 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      - name: "Check is DIPLODOC_STORAGE_BUCKET secret exists"
+        env:
+          storage-bucket: ${{ secrets.DIPLODOC_STORAGE_BUCKET }}
+        if: ${{ env.storage-bucket == '' }}
+        run: 'echo "::error:: The secret \"DIPLODOC_STORAGE_BUCKET\" has not been made; please check that all necessary secrets and variables are installed or follow the link https://diplodoc.com/quickstart" && exit 1'
       - name: Checkout
         uses: actions/checkout@v3
       - name: Release
