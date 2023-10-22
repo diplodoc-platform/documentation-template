@@ -14,14 +14,20 @@ jobs:
         run: 'echo "::error:: The secret \"DIPLODOC_STORAGE_BUCKET\" has not been made; please check that all necessary secrets and variables are installed or follow the link https://diplodoc.com/quickstart" && exit 1'
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Release
-        uses: diplodoc-platform/docs-release-action@v1
+      - name: Build
+        uses: diplodoc-platform/docs-build-action@v2
         with:
           revision: "${{ github.sha }}"
-          project-name: ${{ vars.DIPLODOC_PROJECT_NAME }}
           src-root: "./docs"
-          storage-bucket: ${{ secrets.DIPLODOC_STORAGE_BUCKET }}
           storage-endpoint: ${{ vars.DIPLODOC_STORAGE_ENDPOINT }}
+          storage-region: ${{ vars.DIPLODOC_STORAGE_REGION }}
+          storage-bucket: ${{ secrets.DIPLODOC_STORAGE_BUCKET }}
           storage-access-key-id: ${{ secrets.DIPLODOC_ACCESS_KEY_ID }}
           storage-secret-access-key: ${{ secrets.DIPLODOC_SECRET_ACCESS_KEY }}
-          storage-region: ${{ vars.DIPLODOC_STORAGE_REGION }}
+      - name: Release
+        uses: diplodoc-platform/docs-release-action@v2
+        with:
+          revision: "${{ github.sha }}"
+          storage-bucket: ${{ secrets.DIPLODOC_STORAGE_BUCKET }}
+          storage-access-key-id: ${{ secrets.DIPLODOC_ACCESS_KEY_ID }}
+          storage-secret-access-key: ${{ secrets.DIPLODOC_SECRET_ACCESS_KEY }}
