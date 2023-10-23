@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  release:
+  check-env:
     runs-on: ubuntu-latest
     steps:
       - name: "Check is DIPLODOC_STORAGE_BUCKET secret exists"
@@ -12,6 +12,10 @@ jobs:
           storage-bucket: ${{ vars.DIPLODOC_STORAGE_BUCKET }}
         if: ${{ env.storage-bucket == '' }}
         run: 'echo "::error:: The variable \"DIPLODOC_STORAGE_BUCKET\" has not been made; please check that all necessary secrets and variables are installed or follow the link https://diplodoc.com/quickstart" && exit 1'
+  build:
+    needs: check-env
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Build
@@ -24,6 +28,10 @@ jobs:
           storage-bucket: ${{ vars.DIPLODOC_STORAGE_BUCKET }}
           storage-access-key-id: ${{ secrets.DIPLODOC_ACCESS_KEY_ID }}
           storage-secret-access-key: ${{ secrets.DIPLODOC_SECRET_ACCESS_KEY }}
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Release
         uses: diplodoc-platform/docs-release-action@v2
         with:
