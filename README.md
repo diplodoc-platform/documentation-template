@@ -1,17 +1,19 @@
-# Documentation Template
+# Documentation Template created by Diplodoc
 
-diplodoc documentation template
-
-features:
+Features:
 
 - initial project structure
 - dev server with hot reload
 - codespaces support
 - vscode tutorial via code tours
 
-## usage
+## initial project structure
 
-### run locally by cloning repo:
+Initiatl project structure with basic content can be found within your public github repo "diplodoc-example/docs" 
+
+## Usage
+
+### Run locally by cloning repo:
 
 ```
 > git clone git@github.com:diplodoc-platform/documentation-template.git
