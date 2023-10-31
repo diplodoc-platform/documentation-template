@@ -1,11 +1,13 @@
-title: documentation template
+title: Documentation Project Template
 href: index.yaml
 items:
-  - name: sub-section
+  - name: Sub-Section 
     include:
       path: sub-section/toc.yaml
       mode: link
-  - name: about
+  - name: About
     href: about.md
-  - name: page
+  - name: Additional page 
     href: page.md
+  - name: Another page 
+    href: anotherpage.md

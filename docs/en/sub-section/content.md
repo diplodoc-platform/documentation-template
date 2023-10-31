@@ -1,3 +1,4 @@
-# content page title
+# Sub-Section with content 
 
-content page content :^)
+This is an example page for demonstation how sub-sections can be organized. 
+More details about subsections inclusion can be found at https://diplodoc.com/docs/en/project/toc

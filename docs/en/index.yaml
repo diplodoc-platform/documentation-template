@@ -1,4 +1,4 @@
-title: documentation template
+title: Documentation Template
 links:
   - title: sub-section
     href: sub-section/
@@ -6,3 +6,5 @@ links:
     href: about.md
   - title: page
     href: page.md
+  - title: anotherpage
+    href: anotherpage.md
