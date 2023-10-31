@@ -7,7 +7,7 @@ Features:
 - codespaces support
 - vscode tutorial via code tours
 
-## initial project structure
+## Initial project structure
 
 Initiatl project structure with basic content can be found within your public github repo "diplodoc-example/docs" 
 
