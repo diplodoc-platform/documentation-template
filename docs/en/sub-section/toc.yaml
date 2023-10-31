@@ -1,5 +1,5 @@
-title: sub-section
+title: Sub-section Example TOC
 href: index.yaml
 items:
-  - name: content
+  - name: Content page under sub-section
     href: content.md
