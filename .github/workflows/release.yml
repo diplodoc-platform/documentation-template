@@ -1,8 +1,9 @@
 name: Release
 
 on:
-  push:
-    branches:
+  pull_request:
+    types: [closed]
+    branches:    
       - main
 
 jobs:
