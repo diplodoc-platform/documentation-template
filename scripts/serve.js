@@ -69,6 +69,9 @@ events.addEventListener("${this.configs.sseEventName}", function(e) {
       cacheControl: this.configs.cacheControl,
     }));
     this.app.get(this.configs.ssePath, this.sseRequestHandler.bind(this));
+    this.app.get('/', (req, res) => {
+      res.redirect('/en/index.html');
+    });
     this.sseResponseMessage = `event: ${this.configs.sseEventName}\ndata: ${this.configs.sseEventMessage}\n\n`;
 
     this.buildDocumentation();
@@ -155,12 +158,12 @@ events.addEventListener("${this.configs.sseEventName}", function(e) {
   listen() {
     this.app.listen(this.configs.port);
 
-    console.info(`serving on: http://0.0.0.0:${this.configs.port}`);
+    console.info(`serving on: http://0.0.0.0:${this.configs.port}/en/index.html`);
 
     if (this.configs.autoOpen) {
-        open(`http://0.0.0.0:${this.configs.port}`);
+        open(`http://0.0.0.0:${this.configs.port}/en/index.html`);
     }
-  }
+}
 }
 
 function traverse(node, cb) {
