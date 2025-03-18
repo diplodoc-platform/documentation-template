@@ -6,6 +6,7 @@ on:
 jobs:
   build-docs:
     runs-on: ubuntu-latest
+    if: ${{ github.repository != 'diplodoc-platform/documentation-template' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
