@@ -18,6 +18,7 @@ jobs:
         run: 'echo "::error:: The variable \"DIPLODOC_STORAGE_BUCKET\" has not been made; please check that all necessary secrets and variables are installed or follow the link https://diplodoc.com/quickstart" && exit 1'
   build:
     needs: check-env
+    if: ${{ github.repository != 'diplodoc-platform/documentation-template' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,6 +35,7 @@ jobs:
           storage-secret-access-key: ${{ secrets.DIPLODOC_SECRET_ACCESS_KEY }}
   release:
     needs: build
+    if: ${{ github.repository != 'diplodoc-platform/documentation-template' }}
     runs-on: ubuntu-latest
     steps:
       - name: Release
