@@ -70,7 +70,7 @@ events.addEventListener("${this.configs.sseEventName}", function(e) {
     }));
     this.app.get(this.configs.ssePath, this.sseRequestHandler.bind(this));
     this.app.get('/', (req, res) => {
-      res.redirect('/en/index.html');
+      res.redirect('/ru/index.html');
     });
     this.sseResponseMessage = `event: ${this.configs.sseEventName}\ndata: ${this.configs.sseEventMessage}\n\n`;
 
@@ -158,10 +158,10 @@ events.addEventListener("${this.configs.sseEventName}", function(e) {
   listen() {
     this.app.listen(this.configs.port);
 
-    console.info(`serving on: http://0.0.0.0:${this.configs.port}/en/index.html`);
+    console.info(`serving on: http://0.0.0.0:${this.configs.port}/ru/index.html`);
 
     if (this.configs.autoOpen) {
-        open(`http://0.0.0.0:${this.configs.port}/en/index.html`);
+        open(`http://0.0.0.0:${this.configs.port}/ru/index.html`);
     }
 }
 }
