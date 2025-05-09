@@ -17,3 +17,4 @@ jobs:
         uses: diplodoc-platform/docs-build-action@v3
         with:
           revision: "pr-${{ github.event.pull_request.number }}"
+          src-root: "./docs"
