@@ -2,21 +2,18 @@ name: Build
 
 on:
   pull_request:
+    types: [opened, synchronize]
 
 jobs:
   build-docs:
     runs-on: ubuntu-latest
     if: ${{ github.repository != 'diplodoc-platform/documentation-template' }}
+    permissions: write-all
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Build
-        uses: diplodoc-platform/docs-build-action@v2
+        uses: diplodoc-platform/docs-build-action@v3
         with:
           revision: "pr-${{ github.event.pull_request.number }}"
-          src-root: "./docs"
-          storage-endpoint: ${{ vars.DIPLODOC_STORAGE_ENDPOINT }}
-          storage-region: ${{ vars.DIPLODOC_STORAGE_REGION }}
-          storage-bucket: ${{ vars.DIPLODOC_STORAGE_BUCKET }}
-          storage-access-key-id: ${{ secrets.DIPLODOC_ACCESS_KEY_ID }}
-          storage-secret-access-key: ${{ secrets.DIPLODOC_SECRET_ACCESS_KEY }}

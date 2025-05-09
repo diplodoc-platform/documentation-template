@@ -20,22 +20,31 @@ jobs:
     needs: check-env
     if: ${{ github.repository != 'diplodoc-platform/documentation-template' }}
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Build
-        uses: diplodoc-platform/docs-build-action@v2
+        uses: diplodoc-platform/docs-build-action@v3
         with:
           revision: "${{ github.sha }}"
-          src-root: "./docs"
+  upload:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: Upload
+        uses: diplodoc-platform/docs-upload-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          project-link: ${{ vars.DIPLODOC_PROJECT_LINK }}
           storage-endpoint: ${{ vars.DIPLODOC_STORAGE_ENDPOINT }}
           storage-region: ${{ vars.DIPLODOC_STORAGE_REGION }}
           storage-bucket: ${{ vars.DIPLODOC_STORAGE_BUCKET }}
           storage-access-key-id: ${{ secrets.DIPLODOC_ACCESS_KEY_ID }}
           storage-secret-access-key: ${{ secrets.DIPLODOC_SECRET_ACCESS_KEY }}
   release:
-    needs: build
-    if: ${{ github.repository != 'diplodoc-platform/documentation-template' }}
+    needs: upload
     runs-on: ubuntu-latest
     steps:
       - name: Release
