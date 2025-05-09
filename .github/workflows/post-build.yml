@@ -21,8 +21,6 @@ jobs:
           storage-bucket: ${{ vars.DIPLODOC_STORAGE_BUCKET }}
           storage-access-key-id: ${{ secrets.DIPLODOC_ACCESS_KEY_ID }}
           storage-secret-access-key: ${{ secrets.DIPLODOC_SECRET_ACCESS_KEY }}
-          project-link: ${{ vars.DIPLODOC_PROJECT_LINK }}
-          docs-path: docs
 
       - name: Comment message
         uses: diplodoc-platform/docs-message-action@v1
