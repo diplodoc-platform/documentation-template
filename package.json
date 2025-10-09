@@ -35,14 +35,14 @@
     "build:docs": "yfm --input docs --output docs-html"
   },
   "dependencies": {
-    "@diplodoc/cli": "^4.55.1",
-    "chokidar": "^3.5.3",
-    "express": "^4.18.2",
-    "glob": "^10.3.4",
+    "@diplodoc/cli": "^5.1.0",
+    "chokidar": "^4.0.3",
+    "express": "^5.1.0",
+    "glob": "^11.0.3",
     "lodash": "^4.17.21",
-    "open": "^8.4.2",
-    "parse5": "^7.1.2",
+    "open": "^10.2.0",
+    "parse5": "^8.0.0",
     "parse5-utils": "^2.0.0",
-    "serve-static": "^1.15.0"
+    "serve-static": "^2.2.0"
   }
 }

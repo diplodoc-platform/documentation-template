@@ -9,32 +9,42 @@ Features:
 
 ## Initial project structure
 
-Initiatl project structure with basic content can be found within your public github repo "diplodoc-example/docs" 
+Initial project structure with basic content can be found within your public github repo "diplodoc-example/docs"
 
 ## Usage
 
 ### Run locally by cloning repo:
 
+```sh
+git clone git@github.com:diplodoc-platform/documentation-template.git
 ```
-> git clone git@github.com:diplodoc-platform/documentation-template.git
 
-> cd documentation-template
-
-> npm start
-
-> listening on 0.0.0.0:8000
-
+```sh
+cd documentation-template
 ```
-now you have development server with hot reload runing and serving built documentation on `0.0.0.0:8000`
 
-### github codespaces
+```sh
+npm install
+```
 
-press Use this template -> Open in a codespace
+```sh
+npm start
+```
+
+```sh
+serving on 0.0.0.0:8000
+```
+
+Now you have development server with hot reload runing and serving built documentation on `0.0.0.0:8000`
+
+### Github codespaces
+
+Press `Use this template` -> `Open in a codespace`.
 
 ![open in a codespace](images/open-in-a-codespace.jpeg)
 
-wait for the development server startup
+Wait for the development server startup.
 
-enjoy developing documentation with html result preview in split view
+Enjoy developing documentation with html result preview in split view.
 
 ![codespaces project](images/codespaces-project.jpeg)

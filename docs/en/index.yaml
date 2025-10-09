@@ -7,4 +7,4 @@ links:
   - title: YFM Structure on index page
     href: anotherpage.md
   - title: Sub-section on index page
-    href: sub-section/
+    href: sub-section/content.md
