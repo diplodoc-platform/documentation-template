@@ -21,3 +21,9 @@ To make changes and apply them:
 
 In case if you would like to make proxy from your own domain to this Documentation - please [Contact Us](https://diplodoc.com/#contact) - we will support you accordingly till appropriate documentation creation. 
 
+# Таблица
+
+| Заголовок1  | Заголовок2  |
+| ----------- | ----------- |
+| Текст       | Текст       |
+| Текст       | Текст       |

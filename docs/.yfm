@@ -2,3 +2,7 @@ langs: ['ru', 'en']
 
 docs-viewer:
   langs: ['en','ru']
+
+resources:
+  style:
+    - _assets/custom-table.css
